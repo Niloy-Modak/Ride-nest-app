@@ -1,6 +1,6 @@
 import React, { useEffect, useState, use } from 'react';
 import { AuthContext } from '../Provider/AuthContext';
-import { MdOutlineDeleteForever, MdOutlineViewHeadline } from 'react-icons/md';
+import { MdOutlineDeleteForever } from 'react-icons/md';
 import { TiEdit } from 'react-icons/ti';
 import dayjs from 'dayjs';
 import UpdateModal from '../components/ui/UpdateModal';
@@ -104,12 +104,11 @@ const MyCars = () => {
             {loading ? (
                 <Loading />
             ) : (
-                <div className="">
+                <div className="w-[95%] mx-auto">
                     <table className="table space-y-4 md:w-[90%] mx-auto">
                         <thead>
                             <tr className='bg-gray-100'>
                                 <th>Name</th>
-                                <th className='md:hidden'>View Details</th>
                                 <th className='hidden md:table-cell'>Daily Rental Price</th>
                                 <th className='hidden md:table-cell'>bookingCount</th>
                                 <th className='hidden md:table-cell'>Availability</th>
@@ -136,17 +135,6 @@ const MyCars = () => {
                                         </Link>
                                     </td>
 
-                                    <td className='md:hidden'>
-                                        <div className='flex items-center justify-center'>
-                                            <Link to={`/car-details/${car._id}`}>
-                                                <button className='p-2 rounded-lg flex justify-center items-center gap-1
-                                                    bg-green-300 hover:bg-green-500 hover:text-white text-green-800'>
-                                                    <MdOutlineViewHeadline size={24} />
-                                                </button>
-                                            </Link>
-                                        </div>
-                                    </td>
-
                                     <td className="hidden md:table-cell">
                                         $ {car.rent}
                                     </td>
@@ -171,13 +159,13 @@ const MyCars = () => {
                                                     setUpdateModal(true);
                                                 }}
                                                 className='p-2 rounded-lg flex justify-center items-center gap-1
-                                                    bg-sky-300 hover:bg-sky-500 hover:text-white text-blue-800'>
+                                                    bg-sky-300 hover:bg-sky-500 hover:text-white text-blue-800 cursor-pointer'>
                                                 <TiEdit size={24} /> <span className='font-medium hidden lg:block'>Update</span>
                                             </button>
 
                                             <button
                                                 onClick={() => handleDelete(car)}
-                                                className="p-2 rounded-lg flex justify-center items-center gap-1 text-white hover:bg-red-600 bg-red-500">
+                                                className="p-2 rounded-lg flex justify-center items-center gap-1 text-white cursor-pointer hover:bg-red-600 bg-red-500">
                                                 <MdOutlineDeleteForever size={24} /> <span className='hidden lg:block'>Delete</span>
                                             </button>
                                         </div>
