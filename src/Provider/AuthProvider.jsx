@@ -13,7 +13,7 @@ import {
 } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 
-const auth = getAuth(app); // moved outside to avoid reinitialization
+const auth = getAuth(app); 
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -27,6 +27,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -57,16 +58,16 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const userInfo = {
-    createUser,
     user,
     setUser,
-    logOut,
-    logIn,
     loading,
     setLoading,
+    signInWithGoogle,
+    createUser,
+    logIn,
+    logOut,
     updateUser,
     forgotPass,
-    signInWithGoogle
   };
 
   return (
