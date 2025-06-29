@@ -42,7 +42,7 @@ The Car Rental Website is a full-featured web application that allows users to e
 
 1. **Clone the repository:**
    ```bash
-     https://github.com/Niloy-Modak/Rrde-nest-app.git
+     https://github.com/Niloy-Modak/Ride-nest-app.git
 
 2. **Navigate repository:**
    ```bash
