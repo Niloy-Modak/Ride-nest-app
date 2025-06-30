@@ -69,20 +69,20 @@ const SignUp = () => {
     return (
         <section className="">
 
-            <div className='flex items-center' >
+            <div className='flex flex-wrap items-center' >
 
                 {/*1. Banner image */}
-                <div className='flex-1 md:min-h-[calc(100vh)] lg:min-h-[calc(100vh+106px)] bg-cover bg-center md:flex justify-center items-center hidden '
+                <div className='w-0 md:w-7/20 lg:w-1/2 h-screen bg-cover bg-center md:flex justify-center items-center hidden '
                     style={{
                         backgroundImage: `linear-gradient(0deg, rgb(16,16,16) -19.5%, rgba(16,16,16,0) 100%), url(${BannerImg})`
                     }}
                 >
                 </div>
 
-                {/* 2. Login form */}
-                <div className='md:flex-2 lg:flex-1 md:mt-4 lg:mt-8'>
+                {/* 2. Signup form */}
+                <div className='w-full md:w-13/20 lg:w-1/2 h-screen'>
                     {/* Navbar */}
-                    <nav className='grid grid-cols-3 mt-4  md:mt-0'>
+                    <nav className='grid grid-cols-3 pt-8'>
                         <div className="flex items-center space-x-2 ml-4 md:ml-12 ">
                             <Link to='/'>
                                 {/* website logo */}
@@ -114,7 +114,7 @@ const SignUp = () => {
                     {/* Login */}
                     <div className="card bg-base-100 
                     rounded-2xl mx-auto mt-18 mb-48 md:p-4 lg:p-6
-                    w-[90%] md:w-[80%] lg:max-w-[508px] p-2 shrink-0 shadow-2xl"
+                    w-[87%] md:w-[80%] lg:max-w-[508px] p-2 shrink-0 shadow-2xl"
                     >
 
                         <h1 className="text-2xl md:text-3xl font-bold text-red-600 text-center m-2">Sign Up Now!</h1>

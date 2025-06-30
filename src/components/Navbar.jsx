@@ -65,7 +65,7 @@ const Navbar = () => {
 
     return (
         <nav className="bg-white w-full fixed top-0 left-0 z-50 " ref={navbarRef}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="lg:max-w-screen-2xl mx-auto px-4 md:px-6 ">
                 <div className="flex justify-between h-16 items-center">
                     {/* Logo */}
                     <div className="flex items-center space-x-2">
@@ -155,7 +155,7 @@ const Navbar = () => {
 
             {/* Mobile Menu with Animation */}
             <div
-                className={`lg:hidden bg-white px-4 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[500px] py-6 opacity-100 shadow-md" : "max-h-0 py-0 opacity-0"
+                className={`lg:hidden bg-white px-4 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[500px] py-6 opacity-100 shadow-md " : "max-h-0 py-0 opacity-0"
                     }`}
             >
                 {user ? (
@@ -172,7 +172,7 @@ const Navbar = () => {
                                     to={to}
                                     onClick={() => setIsOpen(false)}
                                     className={({ isActive }) =>
-                                        `block w-full px-4 py-2 rounded-md transition-all text-right ${isActive ? "text-primary font-bold bg-red-50 " : "text-gray-700 hover:bg-gray-100"
+                                        `block w-full px-4 py-2 rounded-md transition-all text-right ${isActive ? "text-primary font-bold bg-red-50 " : "text-gray-700 hover:bg-red-100"
                                         }`
                                     }
                                 >
@@ -193,7 +193,7 @@ const Navbar = () => {
                                     to={to}
                                     onClick={() => setIsOpen(false)}
                                     className={({ isActive }) =>
-                                        `block w-full px-4 py-2 rounded-md transition-all text-right ${isActive ? "text-primary font-bold bg-red-50 " : "text-gray-700 hover:bg-gray-100"
+                                        `block w-full px-4 py-2 rounded-md transition-all text-right ${isActive ? "text-primary font-bold bg-red-50 " : "text-gray-700 hover:bg-red-100"
                                         }`
                                     }
                                 >

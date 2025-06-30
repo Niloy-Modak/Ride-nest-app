@@ -10,8 +10,8 @@ const ExtraSectionIII = () => {
     return (
         <section>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8
-             bg-red-50 p-10 w-[85%] rounded-2xl shadow-2xs 
-             mb-8 md:mb-10 lg:mb-14 mx-auto'>
+             bg-red-50 p-10  rounded-2xl shadow-2xs 
+             mb-8 md:mb-10 lg:mb-14 '>
                 <img src={ToyotaLogo} alt="" />
                 <img src={FordLogo} alt="" />
                 <img src={MercedLogo} alt="" />

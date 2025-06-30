@@ -19,7 +19,7 @@ const RecentAdded = ({ allVehiclesData }) => {
 
 
     return (
-        <section className='w-[94%] md:w-[90%] lg:w-[85%] mx-auto bg-red-50 p-3 md:p-4 lg:p-8 rounded-2xl mb-16'>
+        <section className=' bg-red-50 p-3 md:p-4 lg:p-8 rounded-2xl mb-16'>
             <h1 className='text-3xl lg:text-4xl text-center font-bold p-4 pb-8'>Recent Added Cars</h1>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6'>

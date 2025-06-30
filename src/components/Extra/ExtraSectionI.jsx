@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 const ExtraSectionI = () => {
     return (
-        <section className='pt-4 pb-12 w-[80%] mx-auto'>
+        <section className='pt-4 pb-12 '>
             <h1 className='text-4xl py-8 text-center font-bold'>
                 Why Chose Us?
             </h1>

@@ -5,7 +5,7 @@ import CarImage2 from '../../assets/mercedes-benz-img2.jpg'
 
 const ExtraSectionII = () => {
     return (
-        <section className='w-[85%] mx-auto mt-4 my-12 md:my-8 lg:my-14'>
+        <section className=' mt-4 my-12 md:my-8 lg:my-14'>
             <div className='md:grid md:grid-cols-2 flex flex-col justify-around gap-8 md:gap-10 lg:gap-14'>
                 <div className=''>
 

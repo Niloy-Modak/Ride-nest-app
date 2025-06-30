@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const Banner = () => {
     return (
-        <div className='w-[90%] mx-auto '>
+        <div className=''>
 
             <div className='h-[618px] lg:h-[685px] bg-cover bg-center 
             flex flex-col gap-8

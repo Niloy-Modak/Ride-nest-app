@@ -50,7 +50,7 @@ const AvailableCars = () => {
   return (
     <section className='mb-10 md:mb-12 lg:mb-18'>
 
-      <div className='flex w-[96%] md:w-[90%] mx-auto justify-between items-center gap-4 border-t border-b py-3 border-gray-300'>
+      <div className='flex justify-between items-center gap-4 border-t border-b py-3 border-gray-300'>
         {/* Search input */}
         <div className='md:flex-1'>
           <div className="relative w-[90%] max-w-md lg:w-[45%]">
@@ -97,7 +97,7 @@ const AvailableCars = () => {
       </div>
 
       {/* Available cars & Grid list */}
-      <div className='w-[90%] mx-auto'>
+      <div className=''>
         <div className='grid grid-cols-2 md:grid-cols-3 items-center'>
           <div className='hidden md:block'></div>
           <div>

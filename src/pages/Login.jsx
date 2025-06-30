@@ -61,10 +61,10 @@ const Login = () => {
     return (
         <section className="">
 
-            <div className='flex items-center' >
+            <div className='flex flex-wrap items-center' >
 
                 {/*1. Banner image */}
-                <div className='flex-1 min-h-[calc(100vh)] bg-cover bg-center md:flex justify-center items-center hidden '
+                <div className='w-0 md:w-7/20 lg:w-1/2 h-screen bg-cover bg-center md:flex justify-center items-center hidden '
                     style={{
                         backgroundImage: `linear-gradient(0deg, rgb(16,16,16) -19.5%, rgba(16,16,16,0) 100%), url(${BannerImg})`
                     }}
@@ -72,9 +72,9 @@ const Login = () => {
                 </div>
 
                 {/* 2. Login form */}
-                <div className='md:flex-2 lg:flex-1 '>
+                <div className='w-full md:w-13/20 lg:w-1/2 h-screen'>
                     {/* Navbar */}
-                    <nav className='grid grid-cols-3 mt-4  md:mt-0'>
+                    <nav className='grid grid-cols-3 mt-8'>
                         <div className="flex items-center space-x-2 ml-4 md:ml-12 ">
                             <Link to='/'>
                                 {/* website logo */}
