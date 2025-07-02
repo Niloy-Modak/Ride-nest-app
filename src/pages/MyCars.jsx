@@ -5,11 +5,13 @@ import { TiEdit } from 'react-icons/ti';
 import dayjs from 'dayjs';
 import UpdateModal from '../components/ui/UpdateModal';
 import UpdateMyCars from '../components/mycars/UpdateMyCars';
+import EmptyPageImg from '../assets/emty-page-logo.png'
 
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import Loading from '../components/ui/Loading';
 import { Link } from 'react-router';
+import ButtonII from '../components/ui/ButtonII';
 
 const MyCars = () => {
     const { user } = use(AuthContext);
@@ -103,16 +105,26 @@ const MyCars = () => {
 
             {loading ? (
                 <Loading />
+            ) : myCars.length === 0 ? (
+                <div className="w-full text-center mt-10 min-h-[calc(100vh-222px)] bg-red-50 rounded-2xl shadow-md p-4">
+                    <img src={EmptyPageImg} className='w-[368px] mx-auto pt-12 mb-5' alt="" />
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl text-primary font-bold">You haven’t added any cars yet.</h2>
+                    <div className='py-6'>
+                        <Link to='/add-car'>
+                            <ButtonII label="Add Your Car" />
+                        </Link>
+                    </div>
+                </div>
             ) : (
-                <div className="w-[95%] mx-auto">
-                    <table className="table space-y-4 md:w-[90%] mx-auto">
+                <div className="">
+                    <table className="table space-y-4 w-full">
                         <thead>
                             <tr className='bg-gray-100'>
                                 <th>Name</th>
-                                <th className='hidden md:table-cell'>Daily Rental Price</th>
-                                <th className='hidden md:table-cell'>bookingCount</th>
+                                <th className='hidden md:table-cell pl-0'>Daily Rental Price</th>
+                                <th className='hidden md:table-cell px-0'>bookingCount</th>
                                 <th className='hidden md:table-cell'>Availability</th>
-                                <th className='hidden md:table-cell'>Date Added</th>
+                                <th className='hidden md:table-cell px-0'>Date Added</th>
                                 <th className='text-center'>Update/Delete</th>
                             </tr>
                         </thead>
@@ -135,19 +147,19 @@ const MyCars = () => {
                                         </Link>
                                     </td>
 
-                                    <td className="hidden md:table-cell">
+                                    <td className="hidden md:table-cell text-center px-0 lg:text-left">
                                         $ {car.rent}
                                     </td>
 
-                                    <td className='hidden md:table-cell'>
+                                    <td className='hidden md:table-cell px-0 text-center lg:text-left'>
                                         {car.bookingCount}
                                     </td>
 
-                                    <td className='hidden md:table-cell'>
+                                    <td className='hidden md:table-cell '>
                                         {car.availability}
                                     </td>
 
-                                    <td className='hidden md:table-cell'>
+                                    <td className='hidden md:table-cell px-0 '>
                                         <p>{dayjs(car.createdAt).format('DD-MM-YYYY, h:mm A')}</p>
                                     </td>
 
@@ -159,7 +171,7 @@ const MyCars = () => {
                                                     setUpdateModal(true);
                                                 }}
                                                 className='p-2 rounded-lg flex justify-center items-center gap-1
-                                                    bg-sky-300 hover:bg-sky-500 hover:text-white text-blue-800 cursor-pointer'>
+                                            bg-sky-300 hover:bg-sky-500 hover:text-white text-blue-800 cursor-pointer'>
                                                 <TiEdit size={24} /> <span className='font-medium hidden lg:block'>Update</span>
                                             </button>
 
@@ -185,6 +197,7 @@ const MyCars = () => {
                 <UpdateMyCars car={selectedCar} onClose={() => setUpdateModal(false)} />
             </UpdateModal>
         </div>
+
     );
 };
 

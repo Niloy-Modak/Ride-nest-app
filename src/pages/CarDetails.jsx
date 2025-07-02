@@ -12,7 +12,8 @@ import Modal from '../components/ui/Modal';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../Provider/AuthContext';
 import CarRentCart from '../components/CarRentCart';
-
+import { FaRegAddressCard } from "react-icons/fa";
+import { IoBookmarksSharp } from "react-icons/io5";
 
 const CarDetails = () => {
     const [isBookingModal, setBookingModal] = useState(false);
@@ -28,16 +29,16 @@ const CarDetails = () => {
     }, [carName]);
 
     return (
-        <section className='flex items-center'>
+        <section className='flex items-center '>
 
-            <div className='flex flex-col lg:flex-row justify-around gap-8 lg:gap-14 w-[90%] md:w-[85%] mx-auto mb-10 md:my-10 lg:mt-14'>
-                {/* image */}
+            <div className='flex flex-col lg:flex-row justify-around gap-8 lg:gap-14  md:my-10 lg:mt-14 w-full'>
+                {/*part-1 image */}
                 <div className='flex-1'>
-                    <img className='w-[100%] h-[230px] md:h-[380px] rounded-xl object-cover shadow-2xs' src={image} alt="" />
+                    <img className='w-[100%] h-[230px] md:h-[372px] lg:h-[412px] rounded-xl object-cover shadow-2xs' src={image} alt="" />
                 </div>
 
-                {/* description */}
-                <div className='flex-1 bg-red-50 p-6 lg:p-8 space-y-8 rounded-xl shadow-xs'>
+                {/*part-2 descriptions */}
+                <div className='flex-1 bg-red-50 p-6 lg:p-8 space-y-6 lg:space-y-8 rounded-xl shadow-xs'>
 
                     {/* head name and Three dot options */}
                     <div className='flex justify-between mb-2'>
@@ -63,10 +64,11 @@ const CarDetails = () => {
                         {description}
                     </p>
 
-                    <div className='grid grid-cols-2 lg:grid-cols-3 justify-around '>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-around items-start space-y-2 md:'>
                         {/* Car type */}
                         <div>
-                            <p className='space-x-3  font-medium'>
+                            <p className='space-x-2  font-medium flex items-center'>
+                                <FaCar className=' text-gray-400 mr-1'/>
                                 <span className='text-gray-400 '>
                                     Car Type :
                                 </span>
@@ -77,8 +79,9 @@ const CarDetails = () => {
                         </div>
                             {/* Reg no */}
                         <div>
-                            <p className='space-x-3 text-left font-medium flex justify-center items-center'>
-                                <span className='text-gray-400 flex justify-center items-center gap-2'>
+                            <p className='space-x-2  font-medium flex items-center lg:justify-center'>
+                                <FaRegAddressCard className='text-gray-400 mr-1'/>
+                                <span className='text-gray-400 '>
                                     Reg No :
                                 </span>
                                 <span className='text-gray-600'>
@@ -89,9 +92,10 @@ const CarDetails = () => {
 
                         {/* total seats */}
                         <div>
-                            <p className='space-x-3 font-medium flex justify-center items-center'>
-                                <span className='text-gray-400 md:flex justify-center items-center gap-2'>
-                                    <FaCar className='hidden md:block'/>  Booking Count :
+                            <p className='space-x-3  font-medium flex items-center lg:justify-end'>
+                                <IoBookmarksSharp className='text-gray-400 mr-1'/>
+                                <span className='text-gray-400'>
+                                    Booking Count :
                                 </span>
                                 <span className='text-gray-600'>
                                     {bookingCount}

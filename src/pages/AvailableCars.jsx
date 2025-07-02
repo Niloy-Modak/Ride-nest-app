@@ -3,6 +3,7 @@ import CarCart from '../components/availablecars/CarCart';
 import Loading from '../components/ui/Loading';
 import { IoGridOutline } from "react-icons/io5";
 import { TfiViewListAlt } from "react-icons/tfi";
+import { IoSearch } from "react-icons/io5";
 
 const AvailableCars = () => {
   const [cars, setCars] = useState([]);
@@ -52,44 +53,68 @@ const AvailableCars = () => {
 
       <div className='flex justify-between items-center gap-4 border-t border-b py-3 border-gray-300'>
         {/* Search input */}
-        <div className='md:flex-1'>
-          <div className="relative w-[90%] max-w-md lg:w-[45%]">
-            <svg
-              className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z"
+        <div className='md:flex-1 '>
+          
+          <div className="relative w-[90%] max-w-md lg:w-[45%] flex ">
+            <div className="relative flex-1 ">
+              <svg
+                className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z"
+                />
+              </svg>
+              <input
+                type="search"
+                placeholder="Search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition"
               />
-            </svg>
-            <input
-              type="search"
-              placeholder="Search"
-              required
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus-visible:outline-none transition"
-            />
+            </div>
+            <button
+              onClick={() => { }} // Optional, if you want to add manual search logic
+              className="bg-red-500 text-white px-2 md:px-4 md:py-2 rounded-r-lg hover:bg-red-600 transition flex items-center justify-center gap-1"
+            >
+              <IoSearch className='hidden md:block'/>
+              <span > Search  </span>
+            </button>
           </div>
+
         </div>
 
         {/* Sort Toggle */}
-        <div className="flex  items-center gap-4">
-          <div>
-            <label>Sort: </label>
+        <div className="md:flex text-sm md:text-base items-center justify-center gap-4 hidden">
+          <div className='flex gap-2 items-center justify-center'>
+            <label className=' font-semibold text-gray-500'>Sort: </label>
             <select
               value={sortOrder}
               onChange={handleSortChange}
-              className='input w-36 py-2 border border-gray-300 rounded-lg focus-visible:outline-none'
-            >
-              <option value="low">Price: Low to High</option>
-              <option value="high">Price: High to Low</option>
+              className='input w-24 md:w-36 px-2 h-8 md:h-auto md:px-3 md:py-2 text-xs md:text-base border border-gray-300 rounded-lg focus-visible:outline-none'
+            >       
+              <option  value="low">  Price: Low to High</option>
+              <option  value="high">  Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="flex text-sm md:text-base items-center justify-center gap-4 md:hidden">
+          <div className='flex gap-2 items-center justify-center'>
+            <label className='hidden md:block font-semibold text-gray-500'>Sort: </label>
+            <select
+              value={sortOrder}
+              onChange={handleSortChange}
+              className='input w-24 md:w-36 px-2 h-8 md:h-auto md:px-3 md:py-2 text-xs md:text-base border border-gray-300 rounded-lg focus-visible:outline-none'
+            >       
+              <option className='md:hidden' value="low"> Short Price: Low to High</option>
+              <option className='md:hidden' value="high"> Short Price: High to Low</option>
             </select>
           </div>
         </div>
@@ -105,19 +130,19 @@ const AvailableCars = () => {
           </div>
           <div>
             <div className="flex gap-2 flex-row-reverse">
-              
+
               <button
                 onClick={() => setViewMode('list')}
                 className={`px-3 py-2 cursor-pointer rounded border ${viewMode === 'list' ? 'bg-primary text-white' : 'bg-white text-gray-700'}`}
               >
-                <TfiViewListAlt size={20}/>
+                <TfiViewListAlt size={20} />
               </button>
 
               <button
                 onClick={() => setViewMode('grid')}
                 className={`px-3 py-2 cursor-pointer rounded border ${viewMode === 'grid' ? 'bg-primary text-white' : 'bg-white text-gray-700'}`}
               >
-                <IoGridOutline size={20}/>
+                <IoGridOutline size={20} />
               </button>
 
             </div>
