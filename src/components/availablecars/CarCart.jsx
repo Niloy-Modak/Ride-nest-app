@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { FaLocationArrow, FaDollarSign } from "react-icons/fa6";
 import { IoIosWifi } from "react-icons/io";
 import { MdLiveTv } from "react-icons/md";
@@ -6,21 +6,17 @@ import { TbGpsFilled } from "react-icons/tb";
 import AcImg from '../../assets/ac-logo.png';
 import ButtonII from '../ui/ButtonII';
 import { Link } from 'react-router';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const CarCart = ({ car, viewMode = 'grid' }) => {
     const { _id, carName, features, image, location, rent, availability } = car;
     const isList = viewMode === 'list';
 
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.2 });
-
     return (
         <motion.div
-            ref={ref}
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ type: "spring", stiffness: 100, damping: 15 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
             whileHover={{
                 scale: 1.03,
                 transition: { type: "spring", stiffness: 300 },
