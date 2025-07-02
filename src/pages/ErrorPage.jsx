@@ -15,7 +15,7 @@ const ErrorPage = () => {
         <div>
             <Navbar/>
 
-            <div className='py-24 min-h-[calc(100vh-222px)]'>
+            <div className='py-24 min-h-[calc(100vh-190px)]'>
                 <div className='flex flex-col md:flex-row justify-center items-center'>
                     <div className='px-4 text-center'>
                         
